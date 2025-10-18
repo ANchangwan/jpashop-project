@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,12 +22,12 @@ public class MemberRepostoryTest {
     @DisplayName("연결 테스트")
     public void testMeber(){
         Member member = new Member();
-        member.setUwsername("changwan");
-        Long id = memberRepository.save(member);
-        Member member1 = memberRepository.findById(id);
+        member.setName("changwan");
+       memberRepository.save(member);
+        Member member1 = memberRepository.findById(member.getId());
 
         Assertions.assertThat(member1.getId()).isNotNull();
-        Assertions.assertThat(member1.getUwsername()).isEqualTo(member.getUwsername());
+        Assertions.assertThat(member1.getName()).isEqualTo(member.getName());
     }
 
 }
