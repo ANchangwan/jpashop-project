@@ -25,7 +25,7 @@ public class RepositoryTest {
         Member member = new Member();
         member.setName("test");
         memberRepository.save(member);
-        Long id = memberRepository.findById(member.getId()).getId();
+        Long id = memberRepository.findOne(member.getId()).getId();
 
         assertThat(id).isNotNull();
 
