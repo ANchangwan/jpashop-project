@@ -3,6 +3,7 @@ package jpabook.jpashop.repository;
 import jakarta.persistence.OneToMany;
 import jpabook.jpashop.domain.Member;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,7 @@ public class RepositoryTest {
 
     @Test
     @Transactional
+    @DisplayName("저장 테스트")
     void TestSave(){
         Member member = new Member();
         member.setName("test");
