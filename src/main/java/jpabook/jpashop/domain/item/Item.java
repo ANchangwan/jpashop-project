@@ -34,7 +34,7 @@ public abstract class Item {
 
     //stock 감소
     public void removeStock(int quantity) {
-         int restStock = this.stockQuantity - quantity;
+        int restStock = this.stockQuantity - quantity;
         if (this.stockQuantity < 0) {
             throw new NotEnoughStockException("재고가 더 필요합니다!");
         }

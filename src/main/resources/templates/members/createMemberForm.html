@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 등록</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>회원 등록</h2>
+  </div>
+
+  <form th:action="@{/members/new}" th:object="${member}" method="post">
+    <div class="form-group mb-3">
+      <label for="name">이름</label>
+      <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="이름을 입력하세요">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="city">도시</label>
+      <input type="text" th:field="*{city}" class="form-control" id="city" placeholder="도시를 입력하세요">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="street">거리</label>
+      <input type="text" th:field="*{street}" class="form-control" id="street" placeholder="거리명을 입력하세요">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="zipcode">우편번호</label>
+      <input type="text" th:field="*{zipcode}" class="form-control" id="zipcode" placeholder="우편번호를 입력하세요">
+    </div>
+
+    <button type="submit" class="btn btn-primary">등록</button>
+  </form>
+
+  <br/>
+
+  <!-- footer fragment 불러오기 -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
+</div> <!-- /container -->
+
+</body>
+</html>
