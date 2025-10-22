@@ -18,6 +18,9 @@ public class ItemRepository {
         if (item.getId() == null) {
             em.persist(item);
         } else {
+
+            // merge 사용 금지 --> 바뀌지 않는 속성값은 null로 들어감
+            // 변경감지로 수정해야됨
             em.merge(item);
         }
     }
