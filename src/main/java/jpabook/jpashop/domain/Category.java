@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.item.Item;
 import lombok.Getter;
@@ -17,6 +18,7 @@ public class Category {
 
     private String name;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "category_item",
@@ -25,6 +27,7 @@ public class Category {
     )
     private List<Item> items = new ArrayList<>();
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;

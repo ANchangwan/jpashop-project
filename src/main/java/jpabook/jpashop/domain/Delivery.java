@@ -13,6 +13,7 @@ public class Delivery {
     private Long id;
 
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "delivery")
     private Order order;
 
