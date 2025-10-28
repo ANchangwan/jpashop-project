@@ -23,7 +23,7 @@ import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequiredArgsConstructor
-public class OrderApiController {
+public class   OrderApiController {
 
     private final OrderQueryRepository orderQueryRepository;
     private final OrderRepository orderRepository;
